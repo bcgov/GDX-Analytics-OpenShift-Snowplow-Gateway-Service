@@ -99,8 +99,9 @@ def single_response_query(sql, execute_tuple, fetch_all=False):
                 # In those instances, we will re-create a single connection.
                 except psycopg2.OperationalError:
                     logger.exception("OperationalError. Return this "
-                        "connection to the pool as a closed connection, "
-                        "and get a new one.")
+                                     "connection to the pool "
+                                     "as a closed connection, "
+                                     "and get a new one.")
                     threaded_postgreSQL_pool.putconn(conn, close=True)
                     conn = threaded_postgreSQL_pool.getconn()
                 else:
@@ -208,7 +209,7 @@ def call_snowplow(request_id, json_object):
     # Set up the emitter and tracker. If there is already one for this
     # combination of env, namespace, and app-id, reuse it
     # TODO: add error checking
-    # TEMPORARILY COMMENTED OUT TO AVOID USING THE GLOBAL DICT OF EMITTERS/TRACKERS
+    # TEMP COMMENTED OUT TO AVOID USING THE GLOBAL DICT OF EMITTERS/TRACKERS
     # if tracker_identifier not in e:
     #     e[tracker_identifier] = AsyncEmitter(
     #         sp_route,
@@ -245,7 +246,7 @@ def call_snowplow(request_id, json_object):
 
     # Send call to Snowplow
     # TODO: add error checking
-    # TEMPORARILY COMMENTED OUT TO AVOID USING THE GLOBAL DICT OF EMITTERS/TRACKERS
+    # TEMP COMMENTED OUT TO AVOID USING THE GLOBAL DICT OF EMITTERS/TRACKERS
     # t[tracker_identifier].track_self_describing_event(
     #     event, contexts, tstamp=json_object['dvce_created_tstamp'])
 
