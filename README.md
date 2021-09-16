@@ -1,5 +1,6 @@
 # GDX Analytics Snowplow Gateway Service
-
+[![Lifecycle:Maturing](https://img.shields.io/badge/Lifecycle-Maturing-007EC6)](<Redirect-URL>)
+---
 A gateway service to the Snowplow analytics service for BCGov OpenShift projects
 
 ## Features
