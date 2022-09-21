@@ -3,6 +3,11 @@
 ---
 A gateway service to the Snowplow analytics service for BCGov OpenShift projects
 
+## Notes
+
+This repo is being archived as it is currently not in use. Please see ticket https://apps.itsm.gov.bc.ca/jira/browse/GDXDSD-5242 for more information.
+
+
 ## Features
 
 The GDX Analytics Snowplow Gateway Service written in Python and running on Pipenv hosted as a containerized service to provide an on-cluster endpoint for projects thats run on the Government of British Columbia's OpenShift container platform. This provides an alternative to post analytics events to, in order to avoid client projects from making off-cluster connections to the AWS hosted Snowplow endpoint. This project handles the analytics transfer to AWS, features 7 day backups of all posted data, and provides auditing capability on those.
